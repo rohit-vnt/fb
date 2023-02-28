@@ -159,5 +159,71 @@ class Api extends Controller
     }
     public function test(){
         return "Test";
-    }    
+    }
+    // get company
+    public function getCompanies(){
+        $data=Company::where('status',1)->get();        
+        if($data){
+            return response()->json([
+                'data'=>$data,
+                'type'=>'success'
+            ]);
+        }
+        else{
+            return response()->json([
+                'message'=>'Oops! operation failed!',
+                'type'=>'failed'
+            ]);
+        }
+    }
+    
+    // get branch
+    public function getBranch(){
+        $data=branch::where('status',1)->get();        
+        if($data){
+            return response()->json([
+                'data'=>$data,
+                'type'=>'success'
+            ]);
+        }
+        else{
+            return response()->json([
+                'message'=>'Oops! operation failed!',
+                'type'=>'failed'
+            ]);
+        }
+    }
+    // get Users
+    public function getUsers(){
+        $data=User::where('status',1)->get();        
+        if($data){
+            return response()->json([
+                'data'=>$data,
+                'type'=>'success'
+            ]);
+        }
+        else{
+            return response()->json([
+                'message'=>'Oops! operation failed!',
+                'type'=>'failed'
+            ]);
+        }
+    }
+    // get supplier
+    public function getSupplier(){
+        $data=Supplier::where('status',1)->get();        
+        if($data){
+            return response()->json([
+                'data'=>$data,
+                'type'=>'success'
+            ]);
+        }
+        else{
+            return response()->json([
+                'message'=>'Oops! operation failed!',
+                'type'=>'failed'
+            ]);
+        }
+    }
+        
 }
